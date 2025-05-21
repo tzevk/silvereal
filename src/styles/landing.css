@@ -1,0 +1,68 @@
+/* src/styles/landing.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: black;
+  height: 100%;
+  width: 100%;
+  font-family: 'Cinzel', serif;
+}
+
+.logo-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.logo-wrapper img {
+  max-width: 90vw;
+  height: auto;
+  object-fit: contain;
+  /* filter: drop-shadow(0 0 10px white); */ /* <- Removed glow */
+}
+.starry-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Stronger twinkling stars */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px #fff, 0 0 8px #fff;
+  opacity: 0.9;
+  animation: twinkle 2.5s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-wrapper img {
+    width: 70vw;
+  }
+}
