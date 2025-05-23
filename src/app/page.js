@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import '../styles/landing.css';
 import Blob from '../components/Blob';
+import SubscriptionForm from '../components/SubscriptionForm';
 
 export default function LandingPage() {
   useEffect(() => {
@@ -34,23 +35,25 @@ export default function LandingPage() {
         />
       </div>
 
-<Blob
-  position="top-left"
-  content={
-    <>
-      <h3>SILVEREAL</h3>
-      <p>
-        SILVEREAL brings you celestial-inspired jewelry that radiates charm and confidence.
-        Our modern and aesthetic pieces are made to dazzle—whether you’re dressing up
-        for a night out or adding a spark to your everyday style.
-      </p>
-    </>
-  }
-/>
-<Blob
-  position="bottom-right"
-  content="Silver Collection: Calm and cosmic."
-/>
+      <Blob
+        position="top-left"
+        content={
+          <>
+            <h3>SILVEREAL</h3>
+            <p>
+              SILVEREAL brings you celestial-inspired jewelry that radiates charm and confidence.
+              Our modern and aesthetic pieces are made to dazzle—whether you’re dressing up
+              for a night out or adding a spark to your everyday style.
+            </p>
+          </>
+        }
+      />
+      <Blob
+        position="bottom-right"
+        content="Silver Collection: Calm and cosmic."
+      />
+
+      <SubscriptionForm />
     </main>
   );
 }
