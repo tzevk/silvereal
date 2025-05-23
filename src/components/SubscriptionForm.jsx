@@ -56,8 +56,7 @@ export default function SubscriptionForm() {
 
   return (
     <div className={styles.subscriptionContainer}>
-      <h3 className={styles.title}>Join Our Waitlist</h3>
-      <p className={styles.description}>Be the first to know when we launch our new collection</p>
+      <div className={styles.comingSoon}>COMING SOON</div>
       
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.inputWrapper}>
@@ -78,7 +77,7 @@ export default function SubscriptionForm() {
             className={styles.button}
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+            {isSubmitting ? '...' : 'sign up'}
           </button>
         </div>
         

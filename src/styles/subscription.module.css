@@ -1,54 +1,50 @@
 .subscriptionContainer {
   position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 2rem;
-  max-width: 500px;
-  width: 90%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   text-align: center;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem 1rem;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+.comingSoon {
+  font-size: 0.8rem;
   color: white;
   font-family: 'Cinzel', serif;
-}
-
-.description {
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+  text-transform: uppercase;
 }
 
 .form {
   width: 100%;
+  max-width: 320px;
 }
 
 .inputWrapper {
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .input {
   flex: 1;
-  min-width: 200px;
   padding: 0.75rem 1rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  background: transparent;
   color: white;
   outline: none;
-  transition: all 0.3s ease;
-  font-size: 16px; /* Prevents zoom on iOS */
+  font-size: 14px;
 }
 
 .input::placeholder {
@@ -56,39 +52,39 @@
 }
 
 .input:focus {
-  border-color: rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  background: transparent;
 }
 
 .button {
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.75rem 1.2rem;
   border: none;
-  background: linear-gradient(135deg, #4a4a9c, #7b7bea);
+  background: transparent;
   color: white;
-  font-weight: bold;
+  font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(123, 123, 234, 0.3);
+  transition: all 0.2s ease;
   white-space: nowrap;
-  min-width: 120px;
+  text-transform: lowercase;
+  position: relative;
+}
+
+.button:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .button:hover:not(:disabled) {
-  background: linear-gradient(135deg, #7b7bea, #4a4a9c);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(123, 123, 234, 0.4);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .button:disabled {
-  opacity: 0.7;
+  opacity: 0.5;
   cursor: not-allowed;
-  transform: none;
-}
-
-.button:active {
-  transform: translateY(0);
 }
 
 .message {
@@ -114,25 +110,20 @@
 /* Mobile responsive */
 @media (max-width: 600px) {
   .subscriptionContainer {
-    bottom: 20px;
-    padding: 1.5rem;
-    width: 95%;
+    padding: 1.5rem 1rem;
   }
   
-  .inputWrapper {
-    flex-direction: column;
+  .form {
+    max-width: 280px;
   }
   
   .input {
-    min-width: unset;
-    width: 100%;
+    font-size: 13px;
+    padding: 0.7rem 0.8rem;
   }
   
   .button {
-    width: 100%;
-  }
-  
-  .title {
-    font-size: 1.3rem;
+    font-size: 13px;
+    padding: 0.7rem 1rem;
   }
 }
