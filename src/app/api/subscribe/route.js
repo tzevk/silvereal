@@ -3,12 +3,34 @@ import { initializeDatabase, addSubscriber } from '../../../utils/db';
 
 export async function POST(request) {
   try {
+    console.log('Received subscription request');
+    
     // Initialize the database (creates tables if they don't exist)
-    await initializeDatabase();
+    const dbInitResult = await initializeDatabase();
+    console.log('Database initialization result:', dbInitResult);
+    
+    if (!dbInitResult) {
+      console.error('Failed to initialize database');
+      return NextResponse.json(
+        { success: false, message: 'Database initialization failed' },
+        { status: 500 }
+      );
+    }
     
     // Parse the request body
-    const body = await request.json();
+    let body;
+    try {
+      body = await request.json();
+    } catch (e) {
+      console.error('Error parsing request body:', e);
+      return NextResponse.json(
+        { success: false, message: 'Invalid request body' },
+        { status: 400 }
+      );
+    }
+    
     const { email } = body;
+    console.log('Received email:', email);
     
     // Validate email
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -20,6 +42,7 @@ export async function POST(request) {
     
     // Add the subscriber to the database
     const result = await addSubscriber(email);
+    console.log('Add subscriber result:', result);
     
     if (result.success) {
       return NextResponse.json(
@@ -35,7 +58,7 @@ export async function POST(request) {
   } catch (error) {
     console.error('Error in subscribe API:', error);
     return NextResponse.json(
-      { success: false, message: 'An unexpected error occurred' },
+      { success: false, message: 'An unexpected error occurred: ' + error.message },
       { status: 500 }
     );
   }
