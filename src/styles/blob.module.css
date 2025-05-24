@@ -110,3 +110,23 @@
     transform: translate(0, -50%);
   }
 }
+
+@media (max-width: 600px) {
+  .blob {
+    width: 90px;
+    height: 90px;
+  }
+  .top-left {
+    top: 10%;
+    left: 2%;
+  }
+  .bottom-right {
+    bottom: 8%;
+    right: 4%;
+  }
+  .info {
+    max-width: 160px;
+    font-size: 0.75rem;
+    padding: 10px 12px;
+  }
+}

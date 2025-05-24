@@ -81,6 +81,24 @@ body, html {
 
 @media (max-width: 768px) {
   .logo-wrapper img {
+    width: 55vw;
+    max-width: 320px;
+  }
+  .logo-wrapper {
+    top: 38%;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-wrapper img {
     width: 70vw;
+    max-width: 220px;
+  }
+  .logo-wrapper {
+    top: 32%;
+  }
+  .subscriptionContainer {
+    top: 60% !important;
+    padding: 1.2rem 0.5rem !important;
   }
 }
