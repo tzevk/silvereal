@@ -29,8 +29,8 @@ export default function LandingPage() {
         <Image
           src="/logo.png"
           alt="SilverReal Logo"
-          width={650}
-          height={650}
+          width={900}
+          height={900}
           priority
         />
       </div>
