@@ -1,7 +1,6 @@
 import { neon } from '@neondatabase/serverless';
 
 let client;
-let connected = false;
 
 export function getClient() {
   if (!client) {
@@ -13,7 +12,6 @@ export function getClient() {
     
     // Use neon directly instead of Pool
     client = neon(connectionString);
-    connected = true;
   }
   return client;
 }

@@ -8,13 +8,15 @@ import '../styles/landing.css';
 export const metadata = {
   title: 'SilverReal',
   description: 'Luxury eCommerce – SilverReal',
+  viewport: 'width=device-width, initial-scale=1',
+  charset: 'utf-8',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head />
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
