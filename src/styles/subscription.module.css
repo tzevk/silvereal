@@ -1,6 +1,6 @@
 .subscriptionContainer {
   position: absolute;
-  top: 60%;
+  top: 55vh;
   left: 50%;
   transform: translate(-50%, 0);
   width: 100%;
@@ -110,20 +110,22 @@
 /* Mobile responsive */
 @media (max-width: 600px) {
   .subscriptionContainer {
-    padding: 1.5rem 1rem;
+    top: 60vh;
+    padding: 1rem 0.5rem;
   }
-  
   .form {
-    max-width: 280px;
+    max-width: 95vw;
   }
-  
   .input {
     font-size: 13px;
     padding: 0.7rem 0.8rem;
   }
-  
   .button {
     font-size: 13px;
     padding: 0.7rem 1rem;
+  }
+  .comingSoon {
+    font-size: 0.7rem;
+    margin-bottom: 0.7rem;
   }
 }
