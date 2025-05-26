@@ -37,6 +37,64 @@ body, html {
   z-index: 0;
 }
 
+.moon-top-left {
+  position: absolute;
+  top: -400px;
+  left: -400px;
+  width: 1025px;
+  height: 1025px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 20%, #e0f7ff 60%, transparent 80%);
+  box-shadow:
+    0 0 100px rgba(173, 216, 255, 0.6),
+    0 0 160px rgba(173, 216, 255, 0.4),
+    0 0 300px rgba(173, 216, 255, 0.2);
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.big-glow {
+  position: absolute;
+  top: -560px;          /* peeks in from top-right */
+  right: -390px;
+  width: 800px;
+  height: 900px;
+  pointer-events: none;
+  border-radius: 10%;
+  background: radial-gradient(circle,
+              #ffffff 0%,
+              rgba(121,231,255,0.55) 55%,
+              rgba(0,41,255,0) 80%);
+  filter: blur(80px);
+  opacity: 0.9;
+  animation: haloPulse 10s ease-in-out infinite;
+  z-index: 0;           /* sits just above the star field */
+}
+
+.big-glow2 {
+  position: absolute;
+  top: 560px;          /* peeks in from top-right */
+  right: 990px;
+  width: 600px;
+  height: 900px;
+  pointer-events: none;
+  border-radius: 10%;
+  background: radial-gradient(circle,
+              #ffffff 0%,
+              rgba(121,231,255,0.55) 55%,
+              rgba(0,41,255,0) 80%);
+  filter: blur(80px);
+  opacity: 0.9;
+  animation: haloPulse 10s ease-in-out infinite;
+  z-index: 0;           /* sits just above the star field */
+}
+
+@keyframes haloPulse {
+  0%,100% { transform: scale(0.97); }
+  50%     { transform: scale(1.03); }
+}
+
 /* Stronger twinkling stars */
 .star {
   position: absolute;
@@ -98,5 +156,16 @@ body, html {
   }
   .logo-wrapper {
     top: 30%;
+  }
+}
+
+/* ── phones & small tablets ───────────────────────── */
+@media (max-width: 480px) {
+  .big-glow {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    right: -200px;
+    filter: blur(70px);   /* keeps it soft after down-scaling */
   }
 }

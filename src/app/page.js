@@ -25,7 +25,9 @@ export default function LandingPage() {
 
   return (
     <main className="starry-bg" id="stars">
+      <div className="big-glow" aria-hidden />
       <div className="logo-wrapper fade-in">
+        <div className="moon-corner" />
         <Image
           src="/logo.png"
           alt="SilverReal Logo"
@@ -37,23 +39,23 @@ export default function LandingPage() {
 
       <Blob
         position="top-left"
-        content={
-          <>
-            <h3>SILVEREAL</h3>
-            <p>
-              SILVEREAL brings you celestial-inspired jewelry that radiates charm and confidence.
-              Our modern and aesthetic pieces are made to dazzle—whether you’re dressing up
-              for a night out or adding a spark to your everyday style.
-            </p>
-          </>
-        }
+        color="radial-gradient(circle, 
+                rgb(255, 244, 203) 10%,
+                rgba(255, 255, 255, 0.69) 100%),
+                rgba(0, 0, 0, 0) 100%)"
       />
+
       <Blob
-        position="bottom-right"
-        content="Silver Collection: Calm and cosmic."
+        position="top-right"
+        color="radial-gradient(circle, 
+                rgb(168, 168, 168) 10%,
+                rgb(180, 180, 180) 70%,
+                rgba(255, 255, 255, 0.69) 100%),
+                rgba(0, 0, 0, 0) 100%)"
       />
 
       <SubscriptionForm />
+      <div className="big-glow2" aria-hidden />
     </main>
   );
 }
