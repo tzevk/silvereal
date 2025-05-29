@@ -1,5 +1,3 @@
-/* src/styles/landing.css */
-
 body, html {
   margin: 0;
   padding: 0;
@@ -12,7 +10,7 @@ body, html {
 
 .logo-wrapper {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -90,6 +88,50 @@ body, html {
   z-index: 0;           /* sits just above the star field */
 }
 
+.big-glow3 {
+  position: absolute;
+  top: -180px;          /* peeks in from top-right */
+  right: 1200px;
+  width: 550px;
+  height: 550px;
+  border-radius: 66%;
+  cursor: pointer;
+  background: radial-gradient(circle at 45% 45%,
+              #ffffff 0%,
+              rgba(121,231,255,0.55) 55%,
+              rgba(0,41,255,0) 80%);
+  box-shadow:
+    0 0 10px rgba(0,41,255,0),
+    0 0 25px rgba(201, 245, 255, 0.65),
+    0 0 60px rgba(121,231,255,0.55);
+  animation: haloPulse 10s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  transform: scale(0.97);
+  z-index: 1;           /* sits just above the star field */
+}
+
+.big-glow4 {
+  position: absolute;
+  top: 180px;          /* peeks in from top-right */
+  right: -1200px;
+  width: 550px;
+  height: 550px;
+  border-radius: 66%;
+  cursor: pointer;
+  background: radial-gradient(circle at 45% 45%,
+              #ffffff 0%,
+              rgba(121,231,255,0.55) 55%,
+              rgba(0,41,255,0) 80%);
+  box-shadow:
+    0 0 10px rgba(0,41,255,0),
+    0 0 25px rgba(201, 245, 255, 0.65),
+    0 0 60px rgba(121,231,255,0.55);
+  animation: haloPulse 10s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  transform: scale(0.97);
+  z-index: 1;           /* sits just above the star field */
+}
+
 @keyframes haloPulse {
   0%,100% { transform: scale(0.97); }
   50%     { transform: scale(1.03); }
@@ -106,6 +148,14 @@ body, html {
   opacity: 0.9;
   animation: twinkle 2.5s infinite ease-in-out alternate;
   pointer-events: none; /* Stars don't interfere with clicks */
+}
+
+.angel-float {
+  position: absolute;
+  top: 450px;          /* peeks in from top-right */
+  right: 120px;
+  width: 680px;
+  height: 680px;
 }
 
 @keyframes twinkle {

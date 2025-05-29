@@ -1,7 +1,6 @@
 .subscriptionContainer {
-  
   position: absolute;
-  top: 55vh;
+  top: 49%;
   left: 50%;
   transform: translate(-50%, 0);
   width: 100%;

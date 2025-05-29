@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 import '../styles/landing.css';
-import Blob from '../components/Blob';
 import SubscriptionForm from '../components/SubscriptionForm';
 
 export default function LandingPage() {
@@ -25,9 +24,18 @@ export default function LandingPage() {
 
   return (
     <main className="starry-bg" id="stars">
-      <div className="big-glow" aria-hidden />
       <div className="logo-wrapper fade-in">
         <div className="moon-corner" />
+        
+        {/* Angel Pendant */}
+        <Image
+          src="/one.png"
+          alt="Celestial Pendant"
+          width={800}
+          height={800}
+          className="angel-float"
+        />
+
         <Image
           src="/logo.png"
           alt="SilverReal Logo"
@@ -37,25 +45,9 @@ export default function LandingPage() {
         />
       </div>
 
-      <Blob
-        position="top-left"
-        color="radial-gradient(circle, 
-                rgb(255, 244, 203) 10%,
-                rgba(255, 255, 255, 0.69) 100%),
-                rgba(0, 0, 0, 0) 100%)"
-      />
-
-      <Blob
-        position="top-right"
-        color="radial-gradient(circle, 
-                rgb(168, 168, 168) 10%,
-                rgb(180, 180, 180) 70%,
-                rgba(255, 255, 255, 0.69) 100%),
-                rgba(0, 0, 0, 0) 100%)"
-      />
-
+      {/* <Blob ... /> */}
       <SubscriptionForm />
-      <div className="big-glow2" aria-hidden />
+
     </main>
   );
 }
