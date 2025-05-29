@@ -90,24 +90,20 @@ body, html {
 
 .big-glow3 {
   position: absolute;
-  top: -180px;          /* peeks in from top-right */
-  right: 1200px;
-  width: 550px;
-  height: 550px;
-  border-radius: 66%;
-  cursor: pointer;
-  background: radial-gradient(circle at 45% 45%,
+  top: 560px;          /* peeks in from top-right */
+  right: -990px;
+  width: 600px;
+  height: 900px;
+  pointer-events: none;
+  border-radius: 10%;
+  background: radial-gradient(circle,
               #ffffff 0%,
               rgba(121,231,255,0.55) 55%,
               rgba(0,41,255,0) 80%);
-  box-shadow:
-    0 0 10px rgba(0,41,255,0),
-    0 0 25px rgba(201, 245, 255, 0.65),
-    0 0 60px rgba(121,231,255,0.55);
+  filter: blur(80px);
+  opacity: 0.9;
   animation: haloPulse 10s ease-in-out infinite;
-  transition: transform 0.3s ease;
-  transform: scale(0.97);
-  z-index: 1;           /* sits just above the star field */
+  z-index: 0;          /* sits just above the star field */
 }
 
 .big-glow4 {

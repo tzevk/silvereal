@@ -44,6 +44,9 @@ export default function LandingPage() {
           priority
         />
       </div>
+      
+    <div className="big-glow" aria-hidden />
+    <div className="big-glow2" aria-hidden />
 
       {/* <Blob ... /> */}
       <SubscriptionForm />
