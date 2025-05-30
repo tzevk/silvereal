@@ -25,16 +25,8 @@ export default function LandingPage() {
   return (
     <main className="starry-bg" id="stars">
       <div className="logo-wrapper fade-in">
-        <div className="moon-corner" />
+
         
-        {/* Angel Pendant */}
-        <Image
-          src="/one.png"
-          alt="Celestial Pendant"
-          width={800}
-          height={800}
-          className="angel-float"
-        />
 
         <Image
           src="/logo.png"
@@ -45,12 +37,7 @@ export default function LandingPage() {
         />
       </div>
       
-    <div className="big-glow" aria-hidden />
-    <div className="big-glow2" aria-hidden />
-
-      {/* <Blob ... /> */}
       <SubscriptionForm />
-
     </main>
   );
 }

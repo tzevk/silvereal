@@ -25,112 +25,21 @@ body, html {
 }
 
 .starry-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
+  position: relative;
   overflow: hidden;
-  z-index: 0;
-}
-
-.moon-top-left {
-  position: absolute;
-  top: -400px;
-  left: -400px;
-  width: 1025px;
-  height: 1025px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ffffff 20%, #e0f7ff 60%, transparent 80%);
-  box-shadow:
-    0 0 100px rgba(173, 216, 255, 0.6),
-    0 0 160px rgba(173, 216, 255, 0.4),
-    0 0 300px rgba(173, 216, 255, 0.2);
-  opacity: 1;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.big-glow {
-  position: absolute;
-  top: -560px;          /* peeks in from top-right */
-  right: -390px;
-  width: 800px;
-  height: 900px;
-  pointer-events: none;
-  border-radius: 10%;
-  background: radial-gradient(circle,
-              #ffffff 0%,
-              rgba(121,231,255,0.55) 55%,
-              rgba(0,41,255,0) 80%);
-  filter: blur(80px);
-  opacity: 0.9;
-  animation: haloPulse 10s ease-in-out infinite;
-  z-index: 0;           /* sits just above the star field */
-}
-
-.big-glow2 {
-  position: absolute;
-  top: 560px;          /* peeks in from top-right */
-  right: 990px;
-  width: 600px;
-  height: 900px;
-  pointer-events: none;
-  border-radius: 10%;
-  background: radial-gradient(circle,
-              #ffffff 0%,
-              rgba(121,231,255,0.55) 55%,
-              rgba(0,41,255,0) 80%);
-  filter: blur(80px);
-  opacity: 0.9;
-  animation: haloPulse 10s ease-in-out infinite;
-  z-index: 0;           /* sits just above the star field */
-}
-
-.big-glow3 {
-  position: absolute;
-  top: 560px;          /* peeks in from top-right */
-  right: -990px;
-  width: 600px;
-  height: 900px;
-  pointer-events: none;
-  border-radius: 10%;
-  background: radial-gradient(circle,
-              #ffffff 0%,
-              rgba(121,231,255,0.55) 55%,
-              rgba(0,41,255,0) 80%);
-  filter: blur(80px);
-  opacity: 0.9;
-  animation: haloPulse 10s ease-in-out infinite;
-  z-index: 0;          /* sits just above the star field */
-}
-
-.big-glow4 {
-  position: absolute;
-  top: 180px;          /* peeks in from top-right */
-  right: -1200px;
-  width: 550px;
-  height: 550px;
-  border-radius: 66%;
-  cursor: pointer;
-  background: radial-gradient(circle at 45% 45%,
-              #ffffff 0%,
-              rgba(121,231,255,0.55) 55%,
-              rgba(0,41,255,0) 80%);
-  box-shadow:
-    0 0 10px rgba(0,41,255,0),
-    0 0 25px rgba(201, 245, 255, 0.65),
-    0 0 60px rgba(121,231,255,0.55);
-  animation: haloPulse 10s ease-in-out infinite;
-  transition: transform 0.3s ease;
-  transform: scale(0.97);
-  z-index: 1;           /* sits just above the star field */
-}
-
-@keyframes haloPulse {
-  0%,100% { transform: scale(0.97); }
-  50%     { transform: scale(1.03); }
+  min-height: 100vh;
+  background:
+    radial-gradient( 120% 100% at 92% 6%,      /* ellipse 120×100 % */
+      rgba(255,155,64 ,0.75) 0%,               /* #FF9B40 */
+      rgba(255,139,55 ,0.40) 15%,              /* #FF8B37 */
+      rgba(255,126,50 ,0.14) 35%,              /* #FF7E32 */
+      rgba(255,120,48 ,0.06) 55%,              /* #FF7830 */
+      transparent 70%),
+    radial-gradient(circle at 10% 90%,
+      rgba(30, 79, 255, 0.192) 0%,
+      rgba(30,80,255,0.08) 30%,
+      transparent 60%),
+    linear-gradient(145deg,#041025 0%, #01060f 70%);
 }
 
 /* Stronger twinkling stars */
@@ -205,13 +114,40 @@ body, html {
   }
 }
 
-/* ── phones & small tablets ───────────────────────── */
+/* ═════════════ PHONE PORTRAIT (≤ 480 px) ═════════════ */
 @media (max-width: 480px) {
-  .big-glow {
-    width: 600px;
-    height: 600px;
-    top: -200px;
-    right: -200px;
-    filter: blur(70px);   /* keeps it soft after down-scaling */
+
+  /* 1 ▪ shrink & shift the built-in top-right “sun” */
+  .starry-bg {
+    background:
+      /* ellipse now 90 % × 90 % and tucked farther away */
+      radial-gradient( 90% 90% at 90% -1%,
+        rgba(255,146,58 ,0.70) 0%,
+        rgba(255,132,50 ,0.35) 11%,
+        rgba(255,122,48 ,0.10) 34%,
+        transparent 40%),
+
+      /* cool blue mist stays as-is */
+      radial-gradient(circle at 6% 94%,
+        rgba(106, 138, 255, 0.889) 0%,
+        rgba(30, 80, 255, 0.07) 22%,
+        transparent 60%),
+
+      /* deep-space base */
+      linear-gradient(145deg,#041025 0%, #01060f 70%);
   }
+
+  /* 2 ▪ resize the extra orange overlay (if you added `.orange-flare`) */
+  .orange-flare {
+    top:  -140px;
+    right:-220px;
+    width: 590px;
+    height:440px;              /* wider than tall keeps it oblong */
+    filter: blur(80px);        /* tad less blur for small screens */
+    opacity: 0.82;
+  }
+
+  /* 3 ▪ logo tweaks for very small screens */
+  .logo-wrapper img { width: 70vw; }
+  .logo-wrapper     { top: 38%;   }
 }
